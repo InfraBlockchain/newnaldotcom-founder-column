@@ -6,34 +6,39 @@
 <title>Newnal Columns</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Pretendard+Variable&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --color-text: #1a1a1a;
-    --color-text-secondary: #6b6b6b;
-    --color-bg: #ffffff;
-    --color-border: #e5e5e5;
-    --color-sidebar-bg: #fafafa;
-    --color-sidebar-active: #f0f0f0;
-    --color-sidebar-hover: #f5f5f5;
-    --font-serif: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
-    --font-sans: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --sidebar-width: 280px;
+    /* WIRED Color Palette */
+    --ink-black: #000000;
+    --page-ink: #1a1a1a;
+    --paper-white: #ffffff;
+    --link-blue: #057dbc;
+    --caption-gray: #757575;
+    --hairline: #e2e8f0;
+
+    /* Font Stacks — 4 faces, 4 jobs */
+    --font-display: 'Playfair Display', Georgia, serif;           /* Headlines */
+    --font-body: 'Source Serif 4', Georgia, serif;                /* Reading */
+    --font-ui: 'Inter', -apple-system, sans-serif;               /* UI / sidebar */
+    --font-mono: 'Space Mono', 'Monaco', 'Courier New', monospace; /* Kickers / labels */
+
+    --sidebar-width: 260px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   html {
-    font-size: 18px;
+    font-size: 17px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    font-family: var(--font-sans);
-    color: var(--color-text);
-    background: var(--color-bg);
-    line-height: 1.8;
+    font-family: var(--font-body);
+    color: var(--page-ink);
+    background: var(--paper-white);
+    line-height: 1.5;
   }
 
   /* ── Layout ── */
@@ -42,105 +47,132 @@
     min-height: 100vh;
   }
 
-  /* ── Sidebar ── */
+  /* ── Sidebar — WIRED editorial nav ── */
   .sidebar {
     width: var(--sidebar-width);
     min-width: var(--sidebar-width);
-    border-right: 1px solid var(--color-border);
-    background: var(--color-sidebar-bg);
-    padding: 2rem 0;
+    border-right: 1px solid var(--ink-black);
+    background: var(--paper-white);
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     overflow-y: auto;
     z-index: 100;
-    transition: transform 0.25s ease;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Logo block */
+  .sidebar-header {
+    padding: 32px 24px 24px;
+    border-bottom: 1px solid var(--ink-black);
   }
 
   .sidebar-logo {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-weight: 900;
-    font-size: 1.1rem;
-    color: var(--color-text);
-    padding: 0 1.5rem;
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.02em;
+    font-size: 1.5rem;
+    color: var(--ink-black);
+    letter-spacing: -0.5px;
+    line-height: 1;
   }
 
-  .sidebar-subtitle {
-    font-size: 0.72rem;
-    color: var(--color-text-secondary);
-    padding: 0 1.5rem;
-    margin-bottom: 2rem;
-    letter-spacing: 0.04em;
+  .sidebar-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--caption-gray);
+    letter-spacing: 1.2px;
     text-transform: uppercase;
+    margin-top: 8px;
   }
 
+  /* Nav items */
   .sidebar-nav {
     list-style: none;
+    flex: 1;
+  }
+
+  .sidebar-nav li {
+    border-bottom: 1px solid var(--hairline);
   }
 
   .sidebar-nav li a {
     display: block;
-    padding: 0.7rem 1.5rem;
-    font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--color-text-secondary);
+    padding: 20px 24px;
     text-decoration: none;
-    border-left: 3px solid transparent;
-    transition: all 0.15s ease;
     cursor: pointer;
+    transition: color 0.12s ease;
   }
 
-  .sidebar-nav li a:hover {
-    background: var(--color-sidebar-hover);
-    color: var(--color-text);
+  .sidebar-nav li a .nav-kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--caption-gray);
+    letter-spacing: 0.9px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .sidebar-nav li a .nav-title {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--page-ink);
+    line-height: 1.4;
+    letter-spacing: -0.14px;
+  }
+
+  .sidebar-nav li a:hover .nav-title {
+    color: var(--link-blue);
   }
 
   .sidebar-nav li a.active {
-    background: var(--color-sidebar-active);
-    color: var(--color-text);
-    font-weight: 600;
-    border-left-color: var(--color-text);
+    border-left: 3px solid var(--ink-black);
+    background: none;
   }
 
-  .sidebar-nav li a .nav-number {
-    font-size: 0.7rem;
-    color: var(--color-text-secondary);
-    margin-right: 0.4rem;
-    font-weight: 400;
+  .sidebar-nav li a.active .nav-kicker {
+    color: var(--ink-black);
+  }
+
+  .sidebar-nav li a.active .nav-title {
+    font-weight: 700;
+    color: var(--ink-black);
   }
 
   /* ── Mobile hamburger ── */
   .menu-toggle {
     display: none;
     position: fixed;
-    top: 1rem;
-    left: 1rem;
+    top: 12px;
+    left: 12px;
     z-index: 200;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    background: var(--color-bg);
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--ink-black);
+    border-radius: 0;
+    background: var(--paper-white);
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
 
   .menu-toggle svg {
     width: 20px;
     height: 20px;
-    color: var(--color-text);
+    color: var(--ink-black);
   }
 
   .overlay {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
     z-index: 50;
   }
 
@@ -153,112 +185,144 @@
   .article-container {
     max-width: 640px;
     margin: 0 auto;
-    padding: 3rem 1.5rem 5rem;
+    padding: 48px 24px 80px;
   }
 
-  /* Hide non-active articles */
   .article-container { display: none; }
   .article-container.active { display: block; }
 
-  /* ── Typography ── */
-  .meta { margin-bottom: 2.5rem; }
+  /* ── Article Typography ── */
+
+  /* Kicker / Eyebrow */
+  .meta {
+    margin-bottom: 32px;
+  }
+
+  .meta-kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--page-ink);
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+    line-height: 1.33;
+    margin-bottom: 8px;
+  }
 
   .meta-author {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--caption-gray);
     letter-spacing: 0.02em;
   }
 
   .meta-date {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    margin-top: 0.2rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--caption-gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
   }
 
+  /* Display Headline */
   h1 {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-weight: 900;
-    font-size: 2.2rem;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+    color: var(--page-ink);
+    margin-bottom: 32px;
   }
 
+  /* Section Heading */
   h2 {
-    font-family: var(--font-serif);
+    font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.35rem;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-    margin-top: 2.8rem;
-    margin-bottom: 1rem;
+    line-height: 1.3;
+    letter-spacing: -0.28px;
+    color: var(--page-ink);
+    margin-top: 40px;
+    margin-bottom: 16px;
   }
 
+  /* Body Text — BreveText role */
   p {
+    font-family: var(--font-body);
     font-size: 1rem;
-    line-height: 1.85;
-    color: var(--color-text);
-    margin-bottom: 1.4rem;
+    line-height: 1.75;
+    color: var(--page-ink);
+    letter-spacing: 0.09px;
+    margin-bottom: 1.25rem;
   }
 
+  /* Bullet list */
   ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.4rem;
+    margin-bottom: 1.25rem;
   }
 
   ul li {
     position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 1.2rem;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    font-family: var(--font-body);
     font-size: 1rem;
-    line-height: 1.85;
+    line-height: 1.75;
+    border-left: 2px solid var(--ink-black);
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
 
   ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
-    width: 5px;
-    height: 5px;
-    background: var(--color-text-secondary);
-    border-radius: 50%;
+    display: none;
   }
 
   ul li strong {
     font-weight: 700;
-    color: var(--color-text);
+    color: var(--ink-black);
   }
 
+  /* Section divider — hairline rule */
   .section-break {
-    width: 40px;
+    width: 100%;
     height: 1px;
-    background: var(--color-border);
-    margin: 2.5rem 0;
+    background: var(--hairline);
+    margin: 40px 0;
     border: none;
   }
 
+  /* Author footer */
   .author-footer {
-    margin-top: 3.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 2px solid var(--ink-black);
   }
 
   .author-footer .name {
-    font-family: var(--font-serif);
+    font-family: var(--font-ui);
     font-weight: 700;
-    font-size: 1rem;
-    color: var(--color-text);
+    font-size: 14px;
+    color: var(--ink-black);
+    letter-spacing: 0.3px;
   }
 
   .author-footer .role {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    margin-top: 0.15rem;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--caption-gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── Links ── */
+  a:hover {
+    color: var(--link-blue);
   }
 
   /* ── Responsive ── */
@@ -279,14 +343,14 @@
       margin-left: 0;
     }
     .article-container {
-      padding-top: 4.5rem;
+      padding-top: 72px;
     }
   }
 
   @media (max-width: 680px) {
     html { font-size: 16px; }
-    .article-container { padding: 4.5rem 1.25rem 3.5rem; }
-    h1 { font-size: 1.75rem; }
+    .article-container { padding: 72px 20px 48px; }
+    h1 { font-size: 2rem; line-height: 1.1; }
     h2 { font-size: 1.2rem; }
   }
 </style>
@@ -307,14 +371,18 @@
 
   <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="sidebar-logo">Newnal</div>
-    <div class="sidebar-subtitle">Columns</div>
+    <div class="sidebar-header">
+      <div class="sidebar-logo">Newnal</div>
+      <div class="sidebar-label">Columns</div>
+    </div>
     <ul class="sidebar-nav">
       <li><a href="#column-4" class="active" onclick="showArticle('column-4', this)">
-        <span class="nav-number">04</span>앱의 시대를 넘어 에이전트의 시대로
+        <span class="nav-kicker">Column 04</span>
+        <span class="nav-title">앱의 시대를 넘어 에이전트의 시대로</span>
       </a></li>
       <li><a href="#column-5" onclick="showArticle('column-5', this)">
-        <span class="nav-number">05</span>'똑똑한 뇌'보다 '따뜻한 맥락'이 중요한 이유
+        <span class="nav-kicker">Column 05</span>
+        <span class="nav-title">'똑똑한 뇌'보다 '따뜻한 맥락'이 중요한 이유</span>
       </a></li>
     </ul>
   </aside>
@@ -325,6 +393,7 @@
     <!-- Column 4 -->
     <article class="article-container active" id="column-4">
       <header class="meta">
+        <div class="meta-kicker">Column 04</div>
         <div class="meta-author">YT Kim</div>
         <div class="meta-date">2026년 5월 10일</div>
       </header>
@@ -368,6 +437,7 @@
     <!-- Column 5 -->
     <article class="article-container" id="column-5">
       <header class="meta">
+        <div class="meta-kicker">Column 05</div>
         <div class="meta-author">YT Kim</div>
         <div class="meta-date">2026년 5월 10일</div>
       </header>
