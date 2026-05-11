@@ -154,8 +154,8 @@ body {
   display: block;
   font-family: var(--font-ui);
   font-size: 14px;
-  font-weight: 600;
-  color: var(--page-ink);
+  font-weight: 400;
+  color: var(--caption-gray);
   line-height: 1.45;
   letter-spacing: -0.08px;
 }
@@ -180,7 +180,7 @@ body {
 }
 
 .sidebar-nav li a.active .nav-title {
-  font-weight: 700;
+  font-weight: 800;
   color: #000000;
 }
 
