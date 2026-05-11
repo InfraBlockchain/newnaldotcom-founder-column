@@ -140,6 +140,12 @@ body {
   text-decoration: none;
 }
 
+.sidebar-nav li {
+  border-left: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
 .sidebar-nav li span {
   opacity: 0.55;
 }
