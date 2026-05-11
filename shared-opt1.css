@@ -420,7 +420,7 @@ ul li strong {
   :root { --sidebar-width: 280px; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 499px) {
   .sidebar.open {
     width: 100vw;
     min-width: 100vw;
