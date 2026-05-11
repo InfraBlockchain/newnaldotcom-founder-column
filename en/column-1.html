@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Syne:wght@400&family=Google+Sans+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24..48,400,0,0" rel="stylesheet">
 <script>
   (function(){
     try {
@@ -24,9 +25,19 @@
 </head>
 <body>
 <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-  </svg>
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
 </button>
 
 <div class="mobile-gnb-gradient" aria-hidden="true"></div>
@@ -42,11 +53,6 @@
 
 <div class="layout">
   <aside class="sidebar">
-    <div class="sidebar-header">
-      <div class="sidebar-logo">Newnal</div>
-      <div class="sidebar-label">Columns</div>
-    </div>
-
     <div class="sidebar-section">
       <span class="sidebar-group-label">KR</span>
       <ul class="sidebar-nav">
@@ -70,10 +76,8 @@
   <main class="main">
     <article class="article-container">
       <header class="meta">
-        <div class="meta-kicker">[Column 1]</div>
+        <div class="meta-kicker">FOUNDER COLUMNS</div>
         <h1>Beyond the Data Fortress: Igniting the Path to the Digital Data Plaza</h1>
-        <div class="meta-author">YT Kim, Newnal founder</div>
-        <div class="meta-date">May 5, 2026</div>
       </header>
 
       <p>For decades, we have lived under a digital security model defined by the "Data Fortress." To protect sensitive information, the architects of the modern web built centralized and impenetrable servers. These fortresses were a rational response to the structural limits of legacy systems. But today, those same walls have become silos. While they keep outsiders out, they also keep rightful owners away from visibility into how their own data is used.</p>
