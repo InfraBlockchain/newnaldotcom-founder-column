@@ -413,6 +413,17 @@ ul li strong {
 
 .author-footer .role {
   font-family: var(--font-mono);
+}
+
+.author-signature {
+  margin-top: 48px;
+  text-align: right;
+}
+
+.signature-img {
+  width: 180px;
+  height: auto;
+}
   font-size: 11px;
   color: var(--caption-gray);
   letter-spacing: 1px;
