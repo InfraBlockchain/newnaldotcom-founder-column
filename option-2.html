@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="kr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newnal Columns</title>
+<meta name="description" content="Newnal Columns - AIOS와 에이전트 시대에 대한 칼럼 아카이브.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Newnal Columns">
+<meta property="og:title" content="Newnal Columns">
+<meta property="og:description" content="AIOS와 에이전트 시대를 다루는 Newnal Columns.">
+<meta property="og:url" content="https://columns-smoky.vercel.app/option-2.html">
+<meta property="og:image" content="https://columns-smoky.vercel.app/og-image-opt2.png">
+<meta property="og:image:secure_url" content="https://columns-smoky.vercel.app/og-image-opt2.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Newnal Columns">
+<meta name="twitter:description" content="AIOS와 에이전트 시대를 다루는 Newnal Columns.">
+<meta name="twitter:image" content="https://columns-smoky.vercel.app/og-image-opt2.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink-black: #141413;
+    --page-ink: #252523;
+    --paper-white: #faf9f5;
+    --link-blue: #cc785c;
+    --caption-gray: #6c6a64;
+    --hairline: #e6dfd8;
+    --border-strong: #e6dfd8;
+    --sidebar-active-bg: #efe9de;
+    --nav-kicker-color: #8e8b82;
+    --meta-date-color: #6c6a64;
+    --overlay-bg: rgba(20, 20, 19, 0.38);
+    --control-bg: #faf9f5;
+    --control-border: #d9cec2;
+    --control-text: #252523;
+    --control-active-bg: #cc785c;
+    --control-active-text: #ffffff;
+    --surface-card: #efe9de;
+    --surface-dark: #181715;
+    --surface-dark-elevated: #252320;
+    --rail-width: 260px;
+
+    --font-display: "Cormorant Garamond", "Times New Roman", serif;
+    --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-ui: var(--font-body);
+    --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  :root[data-theme="dark"] {
+    --ink-black: #faf9f5;
+    --page-ink: #e7e0d7;
+    --paper-white: #181715;
+    --link-blue: #d28b72;
+    --caption-gray: #a09d96;
+    --hairline: #312f2b;
+    --border-strong: #38352f;
+    --sidebar-active-bg: #252320;
+    --nav-kicker-color: #9b958c;
+    --meta-date-color: #a09d96;
+    --overlay-bg: rgba(8, 7, 6, 0.72);
+    --control-bg: #1f1e1b;
+    --control-border: #3d3933;
+    --control-text: #faf9f5;
+    --control-active-bg: #cc785c;
+    --control-active-text: #ffffff;
+    --surface-card: #252320;
+    --surface-dark: #0f0e0d;
+    --surface-dark-elevated: #1a1917;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-body);
+    color: var(--page-ink);
+    background: var(--paper-white);
+    line-height: 1.5;
+    background-image:
+      radial-gradient(circle at 6% 8%, rgba(204, 120, 92, 0.12), transparent 34%),
+      radial-gradient(circle at 92% 16%, rgba(204, 120, 92, 0.08), transparent 42%);
+  }
+
+  /* ── Layout ── */
+  .layout {
+    display: flex;
+    min-height: 100vh;
+    max-width: 1240px;
+    margin: 0 auto;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 0 20px;
+  }
+
+  /* Sidebar intentionally removed in option 2 */
+  .sidebar {
+    display: none;
+  }
+
+  .top-controls {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 16px 20px;
+    backdrop-filter: blur(8px);
+    background: color-mix(in srgb, var(--paper-white) 90%, transparent);
+    border-bottom: 1px solid var(--hairline);
+    transition: transform 0.22s ease, opacity 0.2s ease;
+    will-change: transform;
+  }
+
+  .top-controls.gnb-hidden {
+    transform: translateY(-105%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .brand-wrap {
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    color: var(--ink-black);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .control-cluster {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--control-border);
+    background: var(--control-bg);
+  }
+
+  .theme-mode-toggle {
+    display: flex;
+    border: 1px solid var(--control-border);
+    background: var(--control-bg);
+  }
+
+  .lang-btn,
+  .theme-btn {
+    border: 0;
+    background: transparent;
+    color: var(--control-text);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 9px 11px;
+    min-width: 42px;
+  }
+
+  .lang-btn.active,
+  .theme-btn.active {
+    background: var(--control-active-bg);
+    color: var(--control-active-text);
+  }
+
+  /* ── Main content ── */
+  .main {
+    flex: 1;
+    margin-left: 0;
+    min-width: 0;
+  }
+
+  .article-container {
+    max-width: 840px;
+    margin: 0 auto 80px;
+    padding: 48px 28px 92px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--paper-white) 94%, var(--surface-card));
+    border: 1px solid var(--hairline);
+  }
+
+  .article-switch {
+    width: var(--rail-width);
+    flex: 0 0 var(--rail-width);
+    margin: 24px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: sticky;
+    top: 92px;
+    align-self: flex-start;
+  }
+
+  .article-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    width: 100%;
+    min-height: 42px;
+    border: 1px solid var(--control-border);
+    background: var(--control-bg);
+    color: var(--control-text);
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    line-height: 1.35;
+    letter-spacing: 1px;
+    font-weight: 500;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .article-btn > span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+  }
+
+  .article-btn.active {
+    background: var(--control-active-bg);
+    color: var(--control-active-text);
+    border-color: var(--control-active-bg);
+  }
+
+  .article-container { display: none; }
+  .article-container.active { display: block; }
+
+  /* ── Article Typography ── */
+
+  /* Kicker / Eyebrow */
+  .meta {
+    margin-bottom: 32px;
+  }
+
+  .meta-kicker {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--ink-black);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.33;
+    margin-bottom: 8px;
+  }
+
+  .meta-author {
+    font-family: var(--font-ui);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink-black);
+    letter-spacing: 0;
+    line-height: 1.2;
+  }
+
+  .meta-date {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--meta-date-color);
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-top: 6px;
+  }
+
+  /* Display Headline */
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 3.2rem;
+    line-height: 1.08;
+    letter-spacing: -1.1px;
+    color: var(--page-ink);
+    margin-bottom: 34px;
+  }
+
+  /* Section Heading */
+  h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 1.15;
+    letter-spacing: -0.45px;
+    color: var(--page-ink);
+    margin-top: 52px;
+    margin-bottom: 16px;
+  }
+
+  /* Body Text — BreveText role */
+  p {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    line-height: 1.58;
+    color: var(--page-ink);
+    letter-spacing: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Bullet list */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    border-left: 2px solid var(--link-blue);
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  ul li::before {
+    display: none;
+  }
+
+  ul li strong {
+    font-weight: 700;
+    color: var(--ink-black);
+  }
+
+  /* Section divider — hairline rule */
+  .section-break {
+    width: 100%;
+    height: 1px;
+    background: var(--hairline);
+    margin: 48px 0;
+    border: none;
+  }
+
+  /* Author footer */
+  .author-footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border-strong);
+  }
+
+  html[data-lang="kr"] .lang-en {
+    display: none !important;
+  }
+
+  html[data-lang="en"] .lang-kr {
+    display: none !important;
+  }
+
+  .author-footer .name {
+    font-family: var(--font-ui);
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--ink-black);
+    letter-spacing: 0.3px;
+  }
+
+  .author-footer .role {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--caption-gray);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1024px) {
+    .layout {
+      gap: 20px;
+    }
+    .article-switch {
+      width: 224px;
+      flex-basis: 224px;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .layout {
+      display: block;
+      padding: 0;
+      max-width: none;
+    }
+    .article-switch {
+      width: calc(100% - 36px);
+      max-width: 640px;
+      margin: 16px auto 12px;
+      padding: 0;
+      flex-direction: row;
+      position: static;
+      top: auto;
+      flex: initial;
+    }
+    .article-btn { justify-content: center; }
+    .article-btn > span { text-align: center; }
+    .article-container {
+      padding-top: 38px;
+    }
+    .top-controls {
+      padding: 14px 14px;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .control-cluster {
+      width: auto;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      flex-shrink: 0;
+      gap: 6px;
+    }
+  }
+
+  @media (max-width: 680px) {
+    html { font-size: 16px; }
+    .top-controls { padding: 10px 10px; }
+    .brand-wrap { font-size: 1.05rem; letter-spacing: -0.25px; }
+    .lang-btn,
+    .theme-btn {
+      font-size: 11px;
+      min-width: 34px;
+      padding: 8px 8px;
+      letter-spacing: 0.6px;
+    }
+    .article-switch { width: calc(100% - 24px); margin: 12px auto 10px; gap: 8px; }
+    .article-btn {
+      min-height: 40px;
+      font-size: 11px;
+      line-height: 1.3;
+      padding: 9px 12px;
+    }
+    .article-container { padding: 34px 18px 56px; }
+    h1 { font-size: 2.2rem; line-height: 1.08; letter-spacing: -0.8px; }
+    h2 { font-size: 1.6rem; }
+  }
+
+  @media (max-width: 420px) {
+    .brand-wrap { font-size: 0.95rem; }
+    .lang-btn,
+    .theme-btn {
+      min-width: 32px;
+      padding: 7px 7px;
+      letter-spacing: 0.4px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-controls">
+  <div class="brand-wrap">
+    <span>Newnal Columns</span>
+  </div>
+  <div class="control-cluster">
+    <div class="lang-toggle" role="group" aria-label="Language toggle">
+      <button class="lang-btn active" type="button" data-lang="kr" onclick="setLanguage('kr')">KR</button>
+      <button class="lang-btn" type="button" data-lang="en" onclick="setLanguage('en')">EN</button>
+    </div>
+    <div class="theme-mode-toggle" role="group" aria-label="Theme toggle">
+      <button class="theme-btn active" type="button" data-theme="light" onclick="setTheme('light')">LIGHT</button>
+      <button class="theme-btn" type="button" data-theme="dark" onclick="setTheme('dark')">DARK</button>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="article-switch" role="tablist" aria-label="Column selector">
+    <button class="article-btn active" type="button" data-article="column-4" onclick="showArticle('column-4', this)">
+      <span class="lang-kr">[칼럼 4] AIOS의 새로운 문법: ‘기본 감각(Native)’이 정의하는 생태계의 아키텍처</span><span class="lang-en">[Column 4] The New Grammar of AIOS: Defining the Architecture through Native Senses</span>
+    </button>
+    <button class="article-btn" type="button" data-article="column-5" onclick="showArticle('column-5', this)">
+      <span class="lang-kr">[칼럼 5] 지능의 시대, '똑똑한 뇌'보다 '따뜻한 맥락'이 중요한 이유</span><span class="lang-en">[Column 5] In the Era of Intelligence, Why 'Warm Context' Trumps a 'Smart Brain'</span>
+    </button>
+  </div>
+
+  <!-- Main content -->
+  <main class="main">
+    <!-- Column 4 (KR) -->
+    <article class="article-container active" id="column-4-kr" data-article="column-4" data-lang="kr">
+      <header class="meta">
+        <div class="meta-author">YT Kim</div>
+        <div class="meta-date">2026년 5월 10일</div>
+      </header>
+
+      <h1>[칼럼 4] AIOS의 새로운 문법: ‘기본 감각(Native)’이 정의하는 생태계의 아키텍처</h1>
+
+      <h2>도구의 시대가 가고, 파트너의 시대가 온다</h2>
+      <p>우리는 2007년 애플(Apple)이 처음 아이폰을 세상에 내놓았던 순간을 기억합니다. 당시 스티브 잡스는 세상을 바꾸기 위해 '앱스토어'를 먼저 발표하지 않았습니다. 대신 그는 멀티 터치라는 새로운 언어가 무엇인지 증명하기 위해 직접 만든 네이티브 앱(Native Apps)들—메모, 날씨, 지도, 메일—을 선보였습니다. 이 단순해 보이는 도구들이 스마트폰의 '기본 감각'을 정의한 후에야 비로소 우버나 인스타그램 같은 거대한 서비스들이 그 토양 위에서 꽃을 피울 수 있었습니다.</p>
+      <p>그로부터 20년이 흐른 지금, 우리는 또 다른 거대한 전환점에 서 있습니다. 지난 20년이 유저가 직접 앱을 찾아 들어가 명령을 내리는 '도구(App)의 시대'였다면, 앞으로 맞이할 인공지능 OS(AIOS)의 시대는 유저의 맥락을 먼저 읽고 움직이는 '파트너(Agent)의 시대'가 될 것입니다.</p>
+
+      <hr class="section-break">
+
+      <h2>뉴날: 닫힌 샌드박스가 아닌 오픈된 광장</h2>
+      <p>지금까지의 모바일 생태계는 거대 플랫폼이 만든 규칙 안에서만 움직여야 하는 '닫힌 샌드박스'였습니다. 하지만 뉴날(Newnal)이 제안하는 미래는 다릅니다. 뉴날은 완성된 놀이터가 아닙니다. 뉴날은 유저가 자신의 데이터 주권을 회복하고, 그 위에서 수많은 창의적 지능들이 소통하는 '오픈된 광장(Open Plaza)'입니다.</p>
+      <p>이 광장은 크게 두 개의 기둥으로 지탱됩니다. 첫째는 OS의 영혼을 형성하는 '네이티브 에이전트(Native Agents)'이며, 둘째는 그 위에서 새로운 비즈니스 가치를 창출하는 '서드파티 에이전트(Third-party Agents)'입니다.</p>
+
+      <hr class="section-break">
+
+      <h2>네이티브 에이전트: OS의 문법을 다시 쓰다</h2>
+      <p>뉴날의 네이티브 에이전트는 기존 스마트폰의 기본 앱들과는 근본부터 다릅니다. 단순히 텍스트를 저장하던 '메모'는 유저의 과거와 현재의 맥락을 연결해 답을 주는 '기억 에이전트'가 됩니다. 정해진 시간에 벨을 울리던 '알람'은 유저의 컨디션과 내일의 일정을 고려해 최적의 아침을 설계하는 '선제적 플래너'가 됩니다. 또한, 무분별한 광고와 스팸으로부터 유저를 보호하는 '프라이빗 통신 필터'는 OS 차원에서 인간의 존엄과 사생활을 지키는 문지기 역할을 수행합니다.</p>
+      <p>이것이 바로 뉴날이 정의하는 새로운 컴퓨팅의 '기본 감각'입니다.</p>
+
+      <hr class="section-break">
+
+      <h2>서드파티 에이전트: 광장에서 피어나는 새로운 비즈니스</h2>
+      <p>이러한 네이티브 인프라가 튼튼하게 구축될 때, 비로소 그 위에서 진정한 비즈니스 혁신이 일어납니다. 데이터 주권이 보장된 광장 위에서 서드파티 에이전트들은 유저의 진정한 필요를 채우는 킬러 서비스를 제공합니다. 단순히 차량을 호출하는 것을 넘어 유저의 컨디션을 케어하는 이동 서비스, 알고리즘이 아닌 인간적 신뢰를 기반으로 한 관계 맺기 서비스 등, 기존의 '앱' 구조에서는 불가능했던 깊이 있는 서비스들이 이 광장을 가득 채울 것입니다.</p>
+
+      <hr class="section-break">
+
+      <h2>우리가 함께 만드는 세 번째 페이지</h2>
+      <p>뉴날은 혼자서 모든 것을 만들지 않습니다. 우리는 인류가 기술과 맺는 새로운 사회 계약을 함께 써 내려갈 '공동 아키텍트'들을 기다립니다. 누군가는 이 광장의 감각(Native)을 설계하고, 누군가는 그 안을 채울 만찬(Third-party)을 준비할 것입니다.</p>
+      <p>2007년의 애플이 모바일이라는 개인화된 도구를 선물했다면, 2026년 뉴날의 광장은 인간을 이해하고 존중하는 진정한 '지능형 동반자'를 선사할 것입니다. 이제 우리는 앱을 찾아다니는 유목민의 삶을 끝내고, 나를 위한 광장에서 나만의 에이전트들과 함께하는 새로운 삶의 방식을 시작하려 합니다.</p>
+      <p>이 광장의 문은 모두에게 열려 있습니다. 우리 함께, 컴퓨팅 역사의 세 번째 페이지를 써 내려갑시다.</p>
+
+      <footer class="author-footer">
+        <div class="name">YT Kim</div>
+        <div class="role">Founder &amp; CEO, Newnal</div>
+      </footer>
+    </article>
+
+    <!-- Column 4 (EN) -->
+    <article class="article-container" id="column-4-en" data-article="column-4" data-lang="en">
+      <header class="meta">
+        <div class="meta-author">YT Kim</div>
+        <div class="meta-date">May 10, 2026</div>
+      </header>
+
+      <h1>[Column 4] The New Grammar of AIOS: Defining the Architecture through Native Senses</h1>
+
+      <h2>The Era of Tools is Fading; The Era of Partners is Dawning</h2>
+      <p>We all remember the moment Apple first introduced the iPhone to the world in 2007. To change the world, Steve Jobs did not lead with the "App Store." Instead, he showcased Native Apps - Notes, Weather, Maps, and Mail - built to prove what the new language of multi-touch could achieve. Only after these simple tools defined the "basic senses" of a smartphone could massive services like Uber and Instagram flourish on that fertile soil.</p>
+      <p>Twenty years later, we stand at another monumental turning point. While the past two decades were the "Era of Tools (Apps)," where users searched for apps to issue commands, the coming era of AIOS will be the "Era of Partners (Agents)" - intelligences that preemptively read and respond to a user's context.</p>
+
+      <hr class="section-break">
+
+      <h2>Newnal: An Open Plaza, Not a Closed Sandbox</h2>
+      <p>Until now, the mobile ecosystem has been a "closed sandbox," where everyone had to play by the rules dictated by a few giant platforms. Newnal proposes a different future. Newnal is not a finished playground; it is an "Open Plaza," where users reclaim their data sovereignty and diverse, creative intelligences communicate freely.</p>
+      <p>This Plaza is supported by two main pillars: the "Native Agents," which form the soul of the OS, and the "Third-party Agents," which create new business value on that foundation.</p>
+
+      <hr class="section-break">
+
+      <h2>Native Agents: Rewriting the Grammar of the OS</h2>
+      <p>Newnal's Native Agents are fundamentally different from traditional smartphone apps. "Notes," which once merely stored text, becomes a "Memory Agent" that connects a user's past and present contexts to provide answers. The "Alarm," which once simply rang at a set time, becomes a "Proactive Planner" that designs the perfect morning based on the user's condition and schedule. Furthermore, the "Private Communication Filter" acts as a gatekeeper at the OS level, protecting human dignity and privacy from intrusive ads and spam.</p>
+      <p>These are the new "basic senses" of computing defined by Newnal.</p>
+
+      <hr class="section-break">
+
+      <h2>Third-party Agents: New Businesses Blooming in the Plaza</h2>
+      <p>Only when this native infrastructure is robustly established can true business innovation occur. Within a Plaza where data sovereignty is guaranteed, third-party agents can provide killer services that meet a user's genuine needs. From mobility services that care for a user's well-being beyond simple transport to relationship services built on human trust rather than mere algorithms, deeply integrated services impossible in the old "App" structure will fill this Plaza.</p>
+
+      <hr class="section-break">
+
+      <h2>Writing the Third Page Together</h2>
+      <p>Newnal does not build everything alone. We invite "Co-Architects" to help us write a new social contract between humanity and technology. Some will design the senses of this Plaza (Native), while others will prepare the feast within (Third-party).</p>
+      <p>If Apple in 2007 gifted us the personalized tool of mobile, the Newnal Plaza in 2026 will provide a true "intelligent companion" that understands and respects humanity. We are ending our lives as digital nomads searching for apps and beginning a new way of living with agents that serve us in our own Plaza.</p>
+      <p>The gates of this Plaza are open to everyone. Let us write the third page of computing history together.</p>
+
+      <footer class="author-footer">
+        <div class="name">YT Kim</div>
+        <div class="role">Founder &amp; CEO, Newnal</div>
+      </footer>
+    </article>
+
+    <!-- Column 5 (KR) -->
+    <article class="article-container" id="column-5-kr" data-article="column-5" data-lang="kr">
+      <header class="meta">
+        <div class="meta-author">YT Kim</div>
+        <div class="meta-date">2026년 5월 10일</div>
+      </header>
+
+      <h1>[칼럼 5] 지능의 시대, '똑똑한 뇌'보다 '따뜻한 맥락'이 중요한 이유</h1>
+
+      <h2>지능은 공공재가 되었으나, 맥락은 여전히 사막이다</h2>
+      <p>오늘날 인류는 유례없는 인공지능의 풍요 속에 살고 있습니다. 음악을 작곡하고(Suno, Udio), 고화질 영상을 생성하며(Sora, Veo), 전문가 수준의 코딩을 해내는 강력한 지능들이 매일같이 쏟아져 나옵니다. 하지만 역설적이게도 이토록 똑똑한 AI들은 정작 '나'라는 개인의 삶 속으로 깊숙이 들어오지 못하고 있습니다. 챗GPT에게 "오늘 내 기분에 맞는 노래를 만들어줘"라고 말해도, 그것은 나의 어제 잠자리, 오늘 아침의 대화, 현재의 피로도를 전혀 모른 채 내놓는 '확률적 답변'에 불과하기 때문입니다.</p>
+      <p>지금의 AI는 파편화되어 있습니다. 지능(Model)은 강력해졌지만, 그 지능이 움직일 연료인 데이터는 여전히 각 기업의 '데이터 요새(Silo)' 속에 갇혀 있습니다. '똑똑한 뇌'는 넘쳐나는데, 그 뇌가 유저를 진심으로 이해할 수 있는 '맥락'이 없는 셈입니다.</p>
+
+      <hr class="section-break">
+
+      <h2>만들지 말고 연결하십시오: 지능의 오케스트레이터</h2>
+      <p>뉴날(Newnal)이 제안하는 혁신은 새로운 인공지능 모델을 직접 훈련시키는 것이 아닙니다. 이제 지능은 전기나 수도와 같은 공공재가 되었습니다. 여러분이 직접 망치를 만들 필요가 없듯, 이미 세상에 널려 있는 강력한 AI 도구들을 가져와서 뉴날의 '개인 데이터 광장'과 연결하는 것이 핵심입니다.</p>
+      <p>우리는 이것을 '지능의 오케스트레이션(Orchestration)'이라 부릅니다. 기술의 부족함은 기술이 해결해 줍니다. AI의 성능은 기하급수적으로(Exponentially) 향상되고 있으며, 오늘 조금 어색한 결과물을 내놓던 도구도 내일이면 완벽해질 것입니다. 중요한 것은 '도구의 성능'이 아니라, "그 도구를 유저의 데이터와 결합해 어떤 새로운 삶의 맥락을 창조할 것인가"에 대한 설계 논리입니다.</p>
+
+      <hr class="section-break">
+
+      <h2>데이터 광장에서 피어나는 '맥락의 기적'</h2>
+      <p>뉴날의 광장 위에서는 차가운 외부의 지능들이 유저의 따뜻한 데이터를 만나 전례 없는 서비스를 창조합니다.</p>
+      <ul>
+        <li><strong>나만의 인생 웹툰:</strong> 웹툰 그리는 AI를 뉴날의 광장에 연결하십시오. 유저의 실제 얼굴 데이터와 오늘 작성한 메모를 결합하면, 유저와 똑 닮은 캐릭터가 주인공이 되어 매일 아침 유저의 실제 일상을 배달하는 '나만의 인생 웹툰'이 탄생합니다.</li>
+        <li><strong>리얼타임 싱송(Sing-Song):</strong> 지친 퇴근길, 유저의 피로도와 메모장에 남긴 기록을 읽어 오직 그 유저만을 위해 작곡된 멜로디에 유저의 일기를 아름다운 가사로 녹여낸 '단 하나의 노래'를 실시간으로 선물할 수 있습니다.</li>
+        <li><strong>시네마틱 라이프 내레이터:</strong> 영상 생성 AI를 활용해 유저의 한 주간 사진과 목소리 메모를 연결하십시오. 매주 일요일 밤, 유저의 7일을 한 편의 영화처럼 구성하고 AI 내레이션을 입힌 예술적인 아카이빙이 가능해집니다.</li>
+      </ul>
+
+      <hr class="section-break">
+
+      <h2>지능의 시대, 진정한 승자는 누구인가</h2>
+      <p>기술적 완성도는 시간의 흐름에 맡기면 됩니다. 지금 캐릭터의 손가락이 어색하게 그려진다고 해서 시도를 늦출 필요는 없습니다. 기능은 금방 놀라운 수준으로 올라올 것이기 때문입니다. 정작 우리가 선점해야 할 것은 '결합의 논리'입니다.</p>
+      <p>뉴날은 창의적인 서비스 설계자들이 전 세계의 지능들을 마음껏 지휘할 수 있는 광장을 제공합니다. 이제 우리는 '앱'을 찾아다니는 시대를 지나, 나를 완벽하게 이해하는 '에이전트'들이 나를 위해 봉사하는 시대로 진입하고 있습니다.</p>
+      <p>지능의 시대, 진정한 승자는 가장 똑똑한 모델을 가진 자가 아니라, 유저의 삶을 가장 우아하게 연결하는 자가 될 것입니다. 뉴날의 데이터 광장에서, 인류가 한 번도 경험하지 못한 '진짜 서비스'의 시대가 시작됩니다.</p>
+
+      <footer class="author-footer">
+        <div class="name">YT Kim</div>
+        <div class="role">Founder &amp; CEO, Newnal</div>
+      </footer>
+    </article>
+
+    <!-- Column 5 (EN) -->
+    <article class="article-container" id="column-5-en" data-article="column-5" data-lang="en">
+      <header class="meta">
+        <div class="meta-author">YT Kim</div>
+        <div class="meta-date">May 10, 2026</div>
+      </header>
+
+      <h1>[Column 5] In the Era of Intelligence, Why 'Warm Context' Trumps a 'Smart Brain'</h1>
+
+      <h2>Intelligence Has Become a Commodity, Yet Context Remains a Desert</h2>
+      <p>Today, humanity lives in an unprecedented abundance of artificial intelligence. Powerful intelligences that compose music (Suno, Udio), generate high-definition video (Sora, Veo), and perform expert-level coding are released every day. Paradoxically, however, these brilliant AIs fail to enter deeply into our personal lives. When you ask ChatGPT to "create a song that fits my mood today," it offers only a probabilistic answer based on generalities, knowing nothing of your sleep last night, your conversations this morning, or your current exhaustion.</p>
+      <p>Current AI is fragmented. While models (Intelligence) have become formidable, the data - the fuel that drives that intelligence - remains trapped within corporate Data Fortresses (Silos). We have an abundance of smart brains, but they lack the context to truly understand the user.</p>
+
+      <hr class="section-break">
+
+      <h2>Don't Build, Orchestrate: The Orchestrators of Intelligence</h2>
+      <p>The innovation proposed by Newnal is not about training new AI models from scratch. Intelligence has now become a commodity, much like electricity or water. Just as you do not need to forge your own hammer, the key is to take the powerful AI tools already available in the world and connect them to Newnal's Personal Data Plaza.</p>
+      <p>We call this Orchestration of Intelligence. Technical gaps will be solved by technology itself. AI performance is improving exponentially; a tool that produces slightly awkward results today will be perfect tomorrow. What matters is not functional performance, but the service logic of how to combine that intelligence with user data to create a new context for life.</p>
+
+      <hr class="section-break">
+
+      <h2>The Miracle of Context Blooming in the Data Plaza</h2>
+      <p>On Newnal's Plaza, cold external intelligences meet a user's warm, personal data to create unprecedented services:</p>
+      <ul>
+        <li><strong>Personalized Life Webtoons:</strong> Connect a webtoon-generating AI to the Plaza. By combining the user's actual face data with their daily memos, you can deliver a Life Webtoon every morning, where a character identical to the user stars in their actual daily experiences.</li>
+        <li><strong>Real-time Sing-Song:</strong> On an exhausted commute home, an agent reads the user's fatigue and the weary records left in their notes. It then generates a song for one in real-time, with lyrics that transform the user's own diary into beautiful poetry.</li>
+        <li><strong>Cinematic Life Narrator:</strong> Use video generation AI to connect a week's worth of a user's photos and voice memos. Every Sunday, an agent can create an artistic archival piece, a movie of the week narrated by AI that captures the emotional arc of the user's past seven days.</li>
+      </ul>
+
+      <hr class="section-break">
+
+      <h2>In the Age of Intelligence, Who is the True Winner?</h2>
+      <p>Technical perfection can be left to the passage of time. There is no need to delay because an AI draws a finger awkwardly today; functional perfection will leap forward in the blink of an eye. What we must seize now is the logic of connection.</p>
+      <p>Newnal provides a Plaza where creative service designers can freely orchestrate the world's intelligences. We are moving past the era of searching for apps and into an era where agents who perfectly understand us serve our needs.</p>
+      <p>In the age of intelligence, the true winner will not be the one with the smartest model, but the one who connects a user's life with the most grace. On Newnal's Data Plaza, an era of Real Service begins - the likes of which humanity has never experienced before.</p>
+
+      <footer class="author-footer">
+        <div class="name">YT Kim</div>
+        <div class="role">Founder &amp; CEO, Newnal</div>
+      </footer>
+    </article>
+
+  </main>
+</div>
+
+<script>
+let currentLanguage = "kr";
+let currentArticle = "column-4";
+let currentTheme = "light";
+let lastScrollY = 0;
+
+function showArticle(articleKey, navEl, scrollToTop = true) {
+  currentArticle = articleKey;
+
+  document.querySelectorAll(".article-container").forEach((article) => {
+    article.classList.remove("active");
+  });
+
+  const target = document.querySelector(
+    `.article-container[data-article="${articleKey}"][data-lang="${currentLanguage}"]`
+  );
+  if (target) {
+    target.classList.add("active");
+  }
+
+  document.querySelectorAll(".article-btn").forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  if (navEl) {
+    navEl.classList.add("active");
+  } else {
+    const currentButton = document.querySelector(`.article-btn[data-article="${articleKey}"]`);
+    if (currentButton) currentButton.classList.add("active");
+  }
+
+  if (scrollToTop) {
+    window.scrollTo(0, 0);
+  }
+
+}
+
+function setLanguage(language, persist = true) {
+  if (language !== "kr" && language !== "en") return;
+
+  currentLanguage = language;
+  document.documentElement.setAttribute("data-lang", language);
+  document.documentElement.setAttribute("lang", language === "kr" ? "ko" : "en");
+
+  document.querySelectorAll(".lang-btn").forEach((button) => {
+    button.classList.toggle("active", button.dataset.lang === language);
+  });
+
+  const activeArticleButton =
+    document.querySelector(`.article-btn[data-article="${currentArticle}"]`) ||
+    document.querySelector(".article-btn.active") ||
+    document.querySelector(".article-btn");
+
+  if (activeArticleButton) {
+    showArticle(activeArticleButton.dataset.article, activeArticleButton, false);
+  }
+
+  if (persist) {
+    try {
+      localStorage.setItem("columns-language", language);
+    } catch (err) {}
+  }
+}
+
+function setTheme(theme, persist = true) {
+  if (theme !== "light" && theme !== "dark") return;
+
+  currentTheme = theme;
+  document.documentElement.setAttribute("data-theme", theme);
+
+  document.querySelectorAll(".theme-btn").forEach((button) => {
+    button.classList.toggle("active", button.dataset.theme === theme);
+  });
+
+  if (persist) {
+    try {
+      localStorage.setItem("columns-theme", theme);
+    } catch (err) {}
+  }
+}
+
+(function initPreferences() {
+  let savedLanguage = "kr";
+  let savedTheme = null;
+
+  try {
+    savedLanguage = localStorage.getItem("columns-language") || "kr";
+    savedTheme = localStorage.getItem("columns-theme");
+  } catch (err) {}
+
+  const prefersDark =
+    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  setLanguage(savedLanguage === "en" ? "en" : "kr", false);
+  setTheme(savedTheme || (prefersDark ? "dark" : "light"), false);
+})();
+
+(function initGnbAutoHide() {
+  const gnb = document.querySelector(".top-controls");
+  if (!gnb) return;
+
+  lastScrollY = window.scrollY || 0;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      const currentScrollY = window.scrollY || 0;
+
+      if (currentScrollY <= 8) {
+        gnb.classList.remove("gnb-hidden");
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      if (currentScrollY > lastScrollY + 6) {
+        gnb.classList.add("gnb-hidden");
+      } else if (currentScrollY < lastScrollY - 6) {
+        gnb.classList.remove("gnb-hidden");
+      }
+
+      lastScrollY = currentScrollY;
+    },
+    { passive: true }
+  );
+})();
+</script>
+</body>
+</html>
