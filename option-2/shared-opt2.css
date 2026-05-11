@@ -202,7 +202,7 @@ body {
 .article-container {
   max-width: 840px;
   margin: 0 auto 80px;
-  margin-top: 80px;
+  margin-top: 48px;
   padding: 48px 28px 92px;
   border-radius: 12px;
   background: color-mix(in srgb, var(--paper-white) 94%, var(--surface-card));
