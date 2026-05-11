@@ -77,7 +77,7 @@ body {
   display: flex;
   flex-direction: column;
   transform: translateX(-100%);
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .sidebar.open {
