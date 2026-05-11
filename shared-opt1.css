@@ -111,6 +111,10 @@ body {
   text-transform: uppercase;
 }
 
+.sidebar-section:first-child {
+  padding-top: 80px;
+}
+
 .sidebar-section {
   padding: 14px 0 2px;
   border-top: 1px solid var(--hairline);
