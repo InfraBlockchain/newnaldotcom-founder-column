@@ -6,7 +6,7 @@
   --caption-gray: #6b7280;
   --hairline: #e2e8f0;
   --border-strong: #0f172a;
-  --sidebar-active-bg: #0f172a;
+  --sidebar-active-bg: #f0f0f0;
   --nav-kicker-color: #6b7280;
   --meta-date-color: #4b5563;
   --overlay-bg: rgba(0, 0, 0, 0.4);
@@ -31,7 +31,7 @@
   --caption-gray: #9ca3af;
   --hairline: #243040;
   --border-strong: #334155;
-  --sidebar-active-bg: #e5e7eb;
+  --sidebar-active-bg: #1e293b;
   --nav-kicker-color: #94a3b8;
   --meta-date-color: #94a3b8;
   --overlay-bg: rgba(2, 6, 12, 0.72);
@@ -181,11 +181,11 @@ body {
 
 .sidebar-nav li a.active .nav-title {
   font-weight: 700;
-  color: #ffffff;
+  color: #000000;
 }
 
 :root[data-theme="dark"] .sidebar-nav li a.active .nav-title {
-  color: #0b1220;
+  color: #ffffff;
 }
 
 .menu-toggle {
