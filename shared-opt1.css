@@ -421,6 +421,11 @@ ul li strong {
 }
 
 @media (max-width: 860px) {
+  .sidebar.open {
+    width: 100vw;
+    min-width: 100vw;
+  }
+
   .article-container {
     padding-top: 80px;
   }
