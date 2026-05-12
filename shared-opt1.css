@@ -23,23 +23,10 @@
   --sidebar-width: 300px;
 }
 
-:root[data-theme="dark"] {
-  --ink-black: #f3f4f6;
-  --page-ink: #e5e7eb;
-  --paper-white: #0b1220;
-  --link-blue: #8ec7ff;
-  --caption-gray: #9ca3af;
-  --hairline: #243040;
-  --border-strong: #334155;
-  --sidebar-active-bg: #1e293b;
-  --nav-kicker-color: #94a3b8;
-  --meta-date-color: #94a3b8;
-  --overlay-bg: rgba(2, 6, 12, 0.72);
-  --control-bg: #0f172a;
-  --control-border: #334155;
-  --control-text: #e5e7eb;
-  --control-active-bg: #e5e7eb;
-  --control-active-text: #0f172a;
+/* Dark theme disabled – light only */
+
+.theme-mode-toggle {
+  display: none !important;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
