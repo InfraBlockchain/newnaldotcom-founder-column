@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder Column</title>
+<meta name="description" content="[칼럼 2] 앱의 성벽을 넘어">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Syne:wght@400&family=Google+Sans+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24..48,400,0,0" rel="stylesheet">
+<script>
+  (function(){
+    try {
+      var t = localStorage.getItem('columns-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="../shared-opt1.css">
+</head>
+<body>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
+  <span class="material-symbols-rounded">menu</span>
+</button>
+<div class="mobile-gnb-gradient" aria-hidden="true"></div>
+<div class="top-controls">
+  <div class="theme-mode-toggle" role="group" aria-label="Theme toggle">
+    <button class="theme-btn active" type="button" data-theme="light" onclick="setTheme('light')">LIGHT</button>
+    <button class="theme-btn" type="button" data-theme="dark" onclick="setTheme('dark')">DARK</button>
+  </div>
+</div>
+<div class="overlay" onclick="toggleSidebar()"></div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <span class="sidebar-group-label">KR</span>
+      <ul class="sidebar-nav">
+        <li><a href="/kr/column-1.html"><span class="nav-title">[칼럼 1] 데이터 요새를 넘어</span></a></li>
+        <li><a href="/kr/column-2.html" class="active"><span class="nav-title">[칼럼 2] 앱의 성벽을 넘어</span></a></li>
+        <li><a href="/kr/column-3.html"><span class="nav-title">[칼럼 3] 상상력의 영토</span></a></li>
+        <li><a href="/kr/column-4.html"><span class="nav-title">[칼럼 4] AIOS의 새로운 문법</span></a></li>
+        <li><a href="/kr/column-5.html"><span class="nav-title">[칼럼 5] 따뜻한 맥락이 중요한 이유</span></a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <span class="sidebar-group-label">EN</span>
+      <ul class="sidebar-nav">
+        <li><a href="/en/column-1.html"><span class="nav-title">[Column 1] Beyond the Data Fortress</span></a></li>
+        <li><a href="/en/column-2.html"><span class="nav-title">[Column 2] Beyond the App Store</span></a></li>
+        <li><a href="/en/column-3.html"><span class="nav-title">[Column 3] The Realm of Imagination</span></a></li>
+        <li><a href="/en/column-4.html"><span class="nav-title">[Column 4] The New Grammar of AIOS</span></a></li>
+        <li><a href="/en/column-5.html"><span class="nav-title">[Column 5] Why Warm Context Matters</span></a></li>
+      </ul>
+    </div>
+  </aside>
+  <main class="main">
+    <article class="article-container">
+      <header class="meta">
+        <div class="meta-kicker">Founder Column 2</div>
+        <h1>앱의 성벽을 넘어: 혁신의 마중물이 될 '에이전트 플레이스'</h1>
+      </header>
+      <p>지난 칼럼에서 필자는 데이터를 봉인하는 '요새'의 아키텍처를 넘어, 사용자가 주권을 행사하고 검증하는 '디지털 광장'의 필요성을 역설했다. 이 광장은 단순히 정보를 지키는 곳이 아니다. 해방된 데이터가 흐르는 곳에는 필연적으로 그에 걸맞은 새로운 비즈니스 생태계가 탄생해야 한다. 지난 20년간 모바일 혁명을 견인했던 '앱스토어(App Store)'가 그 시대의 최선이었다면, 인공지능 컴퓨팅 시대는 이제 그 너머의 새로운 장인 '에이전트 플레이스(Agent Place)'를 요구하고 있다.</p>
+
+      <hr class="section-break">
+
+      <h2>시대적 필연이었던 '앱 사일로'의 구조</h2>
+      <p>오늘날의 앱 생태계가 가진 폐쇄성을 비판하기에 앞서, 우리는 그 구조가 탄생할 수밖에 없었던 배경을 이해해야 한다. 과거의 컴퓨팅 환경과 보안 기술 수준에서 사용자의 데이터를 보호하고 신뢰할 수 있는 서비스를 제공하기 위해서는 각 앱이 독립된 성벽(Silo)을 쌓는 것이 가장 합리적인 선택이었다. 빅테크 기업들이 구축한 현재의 시스템은 당시의 인프라와 구조적 한계 속에서 보안과 편의성을 동시에 잡기 위해 도출된 시대적 결과물인 셈이다.</p>
+      <p>하지만 시간이 흐르며 이 안전한 성벽들은 역설적으로 새로운 혁신의 허들이 되었다. 유저들은 매번 새로운 앱을 설치하고, 가입하고, 본인 인증을 반복하는 과정에서 지쳐가고 있다. 무엇보다 각 앱에 파편화되어 갇힌 데이터는 유저의 종합적인 맥락을 이해하지 못하게 함으로써, 더 고도화된 개인화 서비스로 나아가는 길을 가로막고 있다.</p>
+
+      <hr class="section-break">
+
+      <h2>에이전트 플레이스: 데이터 주권이 여는 새로운 비즈니스 지평</h2>
+      <p>필자가 제안하는 에이전트 플레이스는 기존 체제와의 대립이 아닌, 기술적 진보를 통한 생태계의 진화를 뜻한다. 첫 번째 칼럼에서 언급한 '디지털 광장'에 유저가 자신의 데이터를 투명하게 열어두면(식별 정보는 제외한 채), 수많은 서비스 에이전트들이 그 데이터를 기반으로 유저에게 최적화된 가치를 제안하는 방식이다.</p>
+      <p>이것은 뉴날 AIOS가 추구하는 '역로그인(Reverse Login)'의 실체다. 유저가 서비스를 찾아다니며 자신의 정보를 상납하는 것이 아니라, 유저의 승인을 받은 에이전트들이 유저의 데이터 인프라에 접근해 서비스를 수행하는 것이다. 구글, 아마존, 스타벅스 등 여기저기 흩어져 있던 '마이 데이터(My Data)'가 광장에서 유저를 중심으로 연결될 때, 비로소 나보다 나를 더 잘 아는 진정한 퍼스널 에이전트 서비스가 가능해진다.</p>
+
+      <hr class="section-break">
+
+      <h2>스타트업의 새로운 기회: 데이터 장벽 없는 혁명</h2>
+      <p>에이전트 플레이스의 가장 큰 가치는 혁신의 문턱을 획기적으로 낮추는 데 있다. 지금까지 신생 스타트업이 거대 플랫폼의 '데이터 해자(Moat)'를 넘기란 불가능에 가까웠다. 서비스를 시작하기도 전에 방대한 데이터를 확보해야 했기 때문이다. 하지만 유저가 허락한 데이터가 공개된 광장에서는 이야기가 달라진다.</p>
+      <p>이제 창업자들은 풍부한 개인 데이터와 AI 에이전트 기능을 활용해, 막대한 개발 인력이나 자본 없이도 창의적인 아이디어만으로 고도의 개인화 서비스를 구현할 수 있게 된다. 데이터를 독점한 자가 승리하는 시대가 아니라, 그 데이터를 유저를 위해 얼마나 더 가치 있게 해석하느냐가 본질이 되는 시대가 오는 것이다. 에이전트 플레이스는 고착화된 앱 생태계에서 숨 가빠하던 새로운 비즈니스들이 마음껏 숨 쉬고 성장할 수 있는 비옥한 토양이 될 것이다.</p>
+
+      <hr class="section-break">
+
+      <h2>결론: 뉴날 AIOS가 꿈꾸는 상생의 생태계</h2>
+      <p>앱스토어가 모바일 시대의 문을 열었듯, 에이전트 플레이스는 AI 컴퓨팅 시대의 운영체제인 뉴날 AIOS의 심장이 될 것이다. 이는 기존 플랫폼에 대한 공격이 아니라, 사용자가 겪는 불편함을 해결하고 기술의 혜택을 온전히 유저와 혁신가들에게 돌려주기 위한 새로운 대안의 제시이다.</p>
+      <p>데이터가 투명하게 흐르고 지능이 자유롭게 경쟁하는 에이전트 플레이스에서, 기술은 비로소 인간의 가능성을 무한히 확장하는 도구가 될 것이다. 이것이 우리가 뉴날이라는 새로운 질서를 통해 열고자 하는 미래의 모습이다.</p>
+    </article>
+  </main>
+</div>
+<script src="../shared-opt1.js"></script>
+</body>
+</html>
