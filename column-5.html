@@ -1,213 +1,71 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>지능의 시대, '똑똑한 뇌'보다 '따뜻한 맥락'이 중요한 이유 — Newnal</title>
+<title>Why Warm Context Trumps a Smart Brain — Founder Column 05 | Newnal</title>
+<meta name="description" content="Intelligence has become a commodity. Context is the desert. Don't build — orchestrate.">
+<meta property="og:title" content="In the Era of Intelligence, Why 'Warm Context' Trumps a 'Smart Brain'">
+<meta property="og:description" content="Intelligence has become a commodity. Context is the desert. Don't build — orchestrate.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Pretendard+Variable&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --color-text: #1a1a1a;
-    --color-text-secondary: #6b6b6b;
-    --color-bg: #ffffff;
-    --color-border: #e5e5e5;
-    --color-accent: #1a1a1a;
-    --font-serif: 'Noto Serif KR', Georgia, 'Times New Roman', serif;
-    --font-sans: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html {
-    font-size: 18px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    font-family: var(--font-sans);
-    color: var(--color-text);
-    background: var(--color-bg);
-    line-height: 1.8;
-  }
-
-  .container {
-    max-width: 640px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 5rem;
-  }
-
-  /* Header / Meta */
-  .meta {
-    margin-bottom: 2.5rem;
-  }
-
-  .meta-author {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-text);
-    letter-spacing: 0.02em;
-  }
-
-  .meta-date {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    margin-top: 0.2rem;
-  }
-
-  /* Title */
-  h1 {
-    font-family: var(--font-serif);
-    font-weight: 900;
-    font-size: 2.2rem;
-    line-height: 1.35;
-    letter-spacing: -0.02em;
-    color: var(--color-text);
-    margin-bottom: 2.5rem;
-  }
-
-  /* Section headings */
-  h2 {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1.35rem;
-    line-height: 1.45;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-    margin-top: 2.8rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Body text */
-  p {
-    font-size: 1rem;
-    line-height: 1.85;
-    color: var(--color-text);
-    margin-bottom: 1.4rem;
-  }
-
-  /* Bullet list */
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.4rem;
-  }
-
-  ul li {
-    position: relative;
-    padding-left: 1.2rem;
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-    line-height: 1.85;
-  }
-
-  ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
-    width: 5px;
-    height: 5px;
-    background: var(--color-text-secondary);
-    border-radius: 50%;
-  }
-
-  ul li strong {
-    font-weight: 700;
-    color: var(--color-text);
-  }
-
-  /* Separator */
-  .section-break {
-    width: 40px;
-    height: 1px;
-    background: var(--color-border);
-    margin: 2.5rem 0;
-    border: none;
-  }
-
-  /* Footer / Author bio */
-  .author-footer {
-    margin-top: 3.5rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .author-footer .name {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--color-text);
-  }
-
-  .author-footer .role {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    margin-top: 0.15rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 680px) {
-    html { font-size: 16px; }
-    .container { padding: 2rem 1.25rem 3.5rem; }
-    h1 { font-size: 1.75rem; }
-    h2 { font-size: 1.2rem; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<article class="container">
 
-  <header class="meta">
-    <div class="meta-author">YT Kim</div>
-    <div class="meta-date">2026년 5월 10일</div>
-  </header>
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a class="back-link" href="/"><span class="back-arrow">←</span> All Columns</a>
+  </div>
+</nav>
 
-  <h1>지능의 시대, '똑똑한 뇌'보다 '따뜻한 맥락'이 중요한 이유</h1>
+<article class="article">
+  <div class="article-meta">
+    <span class="article-kicker">Founder Column 05</span>
+  </div>
 
-  <h2>지능은 공공재가 되었으나, 맥락은 여전히 사막이다</h2>
+  <h1>In the Era of Intelligence, Why 'Warm Context' Trumps a 'Smart Brain'</h1>
 
-  <p>오늘날 인류는 유례없는 인공지능의 풍요 속에 살고 있습니다. 음악을 작곡하고(Suno, Udio), 고화질 영상을 생성하며(Sora, Veo), 전문가 수준의 코딩을 해내는 강력한 지능들이 매일같이 쏟아져 나옵니다. 하지만 역설적이게도 이토록 똑똑한 AI들은 정작 '나'라는 개인의 삶 속으로 깊숙이 들어오지 못하고 있습니다. 챗GPT에게 "오늘 내 기분에 맞는 노래를 만들어줘"라고 말해도, 그것은 나의 어제 잠자리, 오늘 아침의 대화, 현재의 피로도를 전혀 모른 채 내놓는 '확률적 답변'에 불과하기 때문입니다.</p>
+  <div class="article-body">
+    <h2><span class="h2-number">§ 1</span>Intelligence Has Become a Commodity, Yet Context Remains a Desert</h2>
+    <p>Today, humanity lives in an unprecedented abundance of artificial intelligence. Powerful intelligences that compose music (Suno, Udio), generate high-definition video (Sora, Veo), and perform expert-level coding are released every day. Paradoxically, however, these brilliant AIs fail to enter deeply into our personal lives. When you ask ChatGPT to "create a song that fits my mood today," it offers only a <em>probabilistic answer</em> based on generalities, knowing nothing of your sleep last night, your conversations this morning, or your current exhaustion.</p>
 
-  <p>지금의 AI는 파편화되어 있습니다. 지능(Model)은 강력해졌지만, 그 지능이 움직일 연료인 데이터는 여전히 각 기업의 '데이터 요새(Silo)' 속에 갇혀 있습니다. '똑똑한 뇌'는 넘쳐나는데, 그 뇌가 유저를 진심으로 이해할 수 있는 '맥락'이 없는 셈입니다.</p>
+    <p>Current AI is fragmented. While models (Intelligence) have become formidable, the data — the fuel that drives that intelligence — remains trapped within corporate <em>Data Fortresses (Silos)</em>. We have an abundance of <em>smart brains</em>, but they lack the <em>context</em> to truly understand the user.</p>
 
-  <hr class="section-break">
+    <h2><span class="h2-number">§ 2</span>Don't Build, Orchestrate: The Orchestrators of Intelligence</h2>
+    <p>The innovation proposed by Newnal is not about training new AI models from scratch. Intelligence has now become a commodity, much like electricity or water. Just as you don't need to forge your own hammer, the key is to take the powerful AI tools already available in the world and connect them to Newnal's <strong>Personal Data Plaza</strong>.</p>
+    <p>We call this <strong>Orchestration of Intelligence</strong>. Technical gaps will be solved by technology itself. AI performance is improving exponentially; a tool that produces slightly awkward results today will be perfect tomorrow. What matters is not <em>functional performance</em>, but the <strong>service logic</strong> of how to combine that intelligence with user data to create a new context for life.</p>
 
-  <h2>만들지 말고 연결하십시오: 지능의 오케스트레이터</h2>
+    <h2><span class="h2-number">§ 3</span>The Miracle of Context Blooming in the Data Plaza</h2>
+    <p>On Newnal's Plaza, cold external intelligences meet a user's warm, personal data to create unprecedented services:</p>
 
-  <p>뉴날(Newnal)이 제안하는 혁신은 새로운 인공지능 모델을 직접 훈련시키는 것이 아닙니다. 이제 지능은 전기나 수도와 같은 공공재가 되었습니다. 여러분이 직접 망치를 만들 필요가 없듯, 이미 세상에 널려 있는 강력한 AI 도구들을 가져와서 뉴날의 '개인 데이터 광장'과 연결하는 것이 핵심입니다.</p>
+    <ul>
+      <li><strong>Personalized Life Webtoons.</strong> Connect a webtoon-generating AI to the Plaza. By combining the user's actual face data with their daily memos, you can deliver a <em>Life Webtoon</em> every morning, where a character identical to the user stars in their actual daily experiences.</li>
+      <li><strong>Real-time Sing-Song.</strong> On an exhausted commute home, an agent reads the user's fatigue and the weary records left in their notes. It then generates a <em>song for one</em> — composed in real-time, with lyrics that transform the user's own diary into beautiful poetry.</li>
+      <li><strong>Cinematic Life Narrator.</strong> Use video generation AI to connect a week's worth of a user's photos and voice memos. Every Sunday, an agent can create an artistic archival piece — a <em>movie of the week</em> narrated by AI that captures the emotional arc of the user's past seven days.</li>
+    </ul>
 
-  <p>우리는 이것을 '지능의 오케스트레이션(Orchestration)'이라 부릅니다. 기술의 부족함은 기술이 해결해 줍니다. AI의 성능은 기하급수적으로(Exponentially) 향상되고 있으며, 오늘 조금 어색한 결과물을 내놓던 도구도 내일이면 완벽해질 것입니다. 중요한 것은 '도구의 성능'이 아니라, "그 도구를 유저의 데이터와 결합해 어떤 새로운 삶의 맥락을 창조할 것인가"에 대한 설계 논리입니다.</p>
+    <h2><span class="h2-number">§ 4</span>In the Age of Intelligence, Who is the True Winner?</h2>
+    <p>Technical perfection can be left to the passage of time. There is no need to delay because an AI draws a finger awkwardly today; functional perfection will leap forward in the blink of an eye. What we must seize now is the <strong>logic of connection</strong>.</p>
+    <p>Newnal provides a Plaza where creative service designers can freely orchestrate the world's intelligences. We are moving past the era of searching for <em>apps</em> and into an era where <em>agents</em> who perfectly understand us serve our needs.</p>
 
-  <hr class="section-break">
+    <blockquote class="pullquote">In the age of intelligence, the true winner will not be the one with the smartest model, but the one who connects a user's life with the most grace.</blockquote>
 
-  <h2>데이터 광장에서 피어나는 '맥락의 기적'</h2>
+    <p>On Newnal's Data Plaza, an era of <em>Real Service</em> begins — the likes of which humanity has never experienced before.</p>
 
-  <p>뉴날의 광장 위에서는 차가운 외부의 지능들이 유저의 따뜻한 데이터를 만나 전례 없는 서비스를 창조합니다.</p>
-
-  <ul>
-    <li><strong>나만의 인생 웹툰:</strong> 웹툰 그리는 AI를 뉴날의 광장에 연결하십시오. 유저의 실제 얼굴 데이터와 오늘 작성한 메모를 결합하면, 유저와 똑 닮은 캐릭터가 주인공이 되어 매일 아침 유저의 실제 일상을 배달하는 '나만의 인생 웹툰'이 탄생합니다.</li>
-    <li><strong>리얼타임 싱송(Sing-Song):</strong> 지친 퇴근길, 유저의 피로도와 메모장에 남긴 기록을 읽어 오직 그 유저만을 위해 작곡된 멜로디에 유저의 일기를 아름다운 가사로 녹여낸 '단 하나의 노래'를 실시간으로 선물할 수 있습니다.</li>
-    <li><strong>시네마틱 라이프 내레이터:</strong> 영상 생성 AI를 활용해 유저의 한 주간 사진과 목소리 메모를 연결하십시오. 매주 일요일 밤, 유저의 7일을 한 편의 영화처럼 구성하고 AI 내레이션을 입힌 예술적인 아카이빙이 가능해집니다.</li>
-  </ul>
-
-  <hr class="section-break">
-
-  <h2>지능의 시대, 진정한 승자는 누구인가</h2>
-
-  <p>기술적 완성도는 시간의 흐름에 맡기면 됩니다. 지금 캐릭터의 손가락이 어색하게 그려진다고 해서 시도를 늦출 필요는 없습니다. 기능은 금방 놀라운 수준으로 올라올 것이기 때문입니다. 정작 우리가 선점해야 할 것은 '결합의 논리'입니다.</p>
-
-  <p>뉴날은 창의적인 서비스 설계자들이 전 세계의 지능들을 마음껏 지휘할 수 있는 광장을 제공합니다. 이제 우리는 '앱'을 찾아다니는 시대를 지나, 나를 완벽하게 이해하는 '에이전트'들이 나를 위해 봉사하는 시대로 진입하고 있습니다.</p>
-
-  <p>지능의 시대, 진정한 승자는 가장 똑똑한 모델을 가진 자가 아니라, 유저의 삶을 가장 우아하게 연결하는 자가 될 것입니다. 뉴날의 데이터 광장에서, 인류가 한 번도 경험하지 못한 '진짜 서비스'의 시대가 시작됩니다.</p>
-
-  <footer class="author-footer">
-    <div class="name">YT Kim</div>
-    <div class="role">Founder &amp; CEO, Newnal</div>
-  </footer>
-
+    <section class="next-column">
+      <a class="list-back" href="/">Back to all columns</a>
+    </section>
+  </div>
 </article>
+
 </body>
 </html>

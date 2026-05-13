@@ -1,196 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Founder Column</title>
-<meta name="description" content="Founder Columns by Young Tae Kim, CEO of Newnal">
+<title>Founder's Columns — Newnal</title>
+<meta name="description" content="Founder's Columns by YT Kim, Founder of Newnal. Essays on data sovereignty, the Agent Place, and the dawn of AI-native computing.">
+<meta property="og:title" content="Founder's Columns — Newnal">
+<meta property="og:description" content="Essays by YT Kim on data sovereignty, the Agent Place, and the dawn of AI-native computing.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Syne:wght@400&family=Google+Sans+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/shared-opt1.css">
-<style>
-  .list-page {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 80px 24px 80px;
-  }
-
-  .list-header {
-    margin-bottom: 48px;
-  }
-
-  .list-kicker {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--ink-black);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    line-height: 1.33;
-    margin-bottom: 10px;
-  }
-
-  .list-header h1 {
-    font-family: var(--font-display);
-    font-weight: 900;
-    font-size: 2.3rem;
-    line-height: 1.24;
-    letter-spacing: -0.5px;
-    color: var(--page-ink);
-    margin-bottom: 0;
-  }
-
-  .column-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .column-list li {
-    border-left: none;
-    border-top: 1px solid var(--hairline);
-    padding-left: 0;
-    margin-bottom: 0;
-  }
-
-  .column-list li:last-child {
-    border-bottom: 1px solid var(--hairline);
-  }
-
-  .column-list li a {
-    display: block;
-    padding: 24px 0;
-    text-decoration: none;
-    color: var(--page-ink);
-  }
-
-  .column-list li a:hover .col-title {
-    color: var(--ink-black);
-  }
-
-  .col-number {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--caption-gray);
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 6px;
-  }
-
-  .col-title {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1.35;
-    letter-spacing: -0.08px;
-    color: var(--caption-gray);
-    transition: color 0.15s;
-  }
-
-  @media (max-width: 680px) {
-    .list-page {
-      padding: 72px 20px 48px;
-    }
-    .list-header h1 {
-      font-size: 2rem;
-      line-height: 1.12;
-    }
-    .col-title {
-      font-size: 1.05rem;
-    }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-<button class="menu-toggle" onclick="toggleSidebar()" aria-label="Open menu">
-  <span class="material-symbols-rounded">menu</span>
-</button>
 
-<div class="mobile-gnb-gradient" aria-hidden="true"></div>
+<main class="list-shell">
+  <header class="list-header">
+    <h1 class="list-title">Founder's Columns</h1>
+    <p class="list-byline">by <strong>YT Kim</strong> &nbsp;·&nbsp; Founder, Newnal</p>
+  </header>
 
-<div class="top-controls">
-  <div class="theme-mode-toggle" role="group" aria-label="Theme toggle">
-    <button class="theme-btn active" type="button" data-theme="light" onclick="setTheme('light')">LIGHT</button>
-    <button class="theme-btn" type="button" data-theme="dark" onclick="setTheme('dark')">DARK</button>
-  </div>
-</div>
+  <ol class="column-list">
+    <li class="featured">
+      <a href="/column-1.html">
+        <span class="col-num">01</span>
+        <div class="col-content">
+          <span class="col-tag">Start the series</span>
+          <h2 class="col-title">Beyond the Data Fortress: Igniting the Era of the Digital Town Square</h2>
+        </div>
+        <span class="col-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="/column-2.html">
+        <span class="col-num">02</span>
+        <div class="col-content">
+          <span class="col-tag">Founder Column</span>
+          <h2 class="col-title">Beyond the App Store: The Dawn of the 'Agent Place' as a Catalyst for Innovation</h2>
+        </div>
+        <span class="col-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="/column-3.html">
+        <span class="col-num">03</span>
+        <div class="col-content">
+          <span class="col-tag">Founder Column</span>
+          <h2 class="col-title">The Realm of Imagination: The Era of 'Killer Agents' Created by Data Sovereignty</h2>
+        </div>
+        <span class="col-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="/column-4.html">
+        <span class="col-num">04</span>
+        <div class="col-content">
+          <span class="col-tag">Founder Column</span>
+          <h2 class="col-title">The New Grammar of AIOS: Defining the Architecture through Native Senses</h2>
+        </div>
+        <span class="col-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+    <li>
+      <a href="/column-5.html">
+        <span class="col-num">05</span>
+        <div class="col-content">
+          <span class="col-tag">Founder Column</span>
+          <h2 class="col-title">In the Era of Intelligence, Why 'Warm Context' Trumps a 'Smart Brain'</h2>
+        </div>
+        <span class="col-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ol>
+</main>
 
-<div class="overlay" onclick="toggleSidebar()"></div>
-
-<div class="layout">
-  <aside class="sidebar">
-    <div class="sidebar-section">
-      <span class="sidebar-group-label">KR</span>
-      <ul class="sidebar-nav">
-        <li><a href="/kr/column-1.html"><span class="nav-title">[칼럼 1] 데이터 요새를 넘어</span></a></li>
-        <li><a href="/kr/column-2.html"><span class="nav-title">[칼럼 2] 앱의 성벽을 넘어</span></a></li>
-        <li><a href="/kr/column-3.html"><span class="nav-title">[칼럼 3] 상상력의 영토</span></a></li>
-        <li><a href="/kr/column-4.html"><span class="nav-title">[칼럼 4] AIOS의 새로운 문법</span></a></li>
-        <li><a href="/kr/column-5.html"><span class="nav-title">[칼럼 5] 따뜻한 맥락이 중요한 이유</span></a></li>
-      </ul>
-    </div>
-    <div class="sidebar-section">
-      <span class="sidebar-group-label">EN</span>
-      <ul class="sidebar-nav">
-        <li><a href="/en/column-1.html"><span class="nav-title">[Column 1] Beyond the Data Fortress</span></a></li>
-        <li><a href="/en/column-2.html"><span class="nav-title">[Column 2] Beyond the App Store</span></a></li>
-        <li><a href="/en/column-3.html"><span class="nav-title">[Column 3] The Realm of Imagination</span></a></li>
-        <li><a href="/en/column-4.html"><span class="nav-title">[Column 4] The New Grammar of AIOS</span></a></li>
-        <li><a href="/en/column-5.html"><span class="nav-title">[Column 5] Why Warm Context Matters</span></a></li>
-      </ul>
-    </div>
-  </aside>
-
-  <main class="main">
-    <div class="list-page">
-      <header class="list-header">
-        <div class="list-kicker">Founder Columns</div>
-        <h1>Founder Column</h1>
-      </header>
-
-      <ul class="column-list">
-        <li>
-          <a href="/en/column-1.html">
-            <span class="col-number">Founder Column 1</span>
-            <span class="col-title">Beyond the Data Fortress: Igniting the Path to the Digital Data Plaza</span>
-          </a>
-        </li>
-        <li>
-          <a href="/en/column-2.html">
-            <span class="col-number">Founder Column 2</span>
-            <span class="col-title">Beyond the App Store: The Dawn of Agent Place as a Catalyst for Innovation</span>
-          </a>
-        </li>
-        <li>
-          <a href="/en/column-3.html">
-            <span class="col-number">Founder Column 3</span>
-            <span class="col-title">The Realm of Imagination: Killer Agents Created by Data Sovereignty</span>
-          </a>
-        </li>
-        <li>
-          <a href="/en/column-4.html">
-            <span class="col-number">Founder Column 4</span>
-            <span class="col-title">The New Grammar of AIOS: Defining the Architecture through Native Senses</span>
-          </a>
-        </li>
-        <li>
-          <a href="/en/column-5.html">
-            <span class="col-number">Founder Column 5</span>
-            <span class="col-title">In the Era of Intelligence, Why Warm Context Matters More Than a Smart Brain</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </main>
-</div>
-
-<script src="/shared-opt1.js"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Skill(browse)",
+      "Bash(xargs kill *)",
+      "Bash(git ls-tree *)",
+      "Bash(git checkout *)",
+      "Bash(sips -g pixelWidth -g pixelHeight images/yt-kim-signature.png)",
+      "Bash(sips --cropOffsets 0 0 --cropToHeightWidth 160 659 images/yt-kim-signature.png --out images/yt-kim-signature-mark.png)"
+    ]
+  }
+}
